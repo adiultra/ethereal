@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} Archives{% endblock %}
+{% block content %}
+    <div id="content">
+
+		<div class="post">
+		<dl>
+			<h2 class="Archives-title">{{ SITENAME }} Archives</h2>
+            <div id ="article-list">
+			    {% for article in dates %}
+                <div id="article-section">
+                    <div id="article-title"><a href='{{ SITEURL }}/{{ article.url }}'>{{ article.title }}</a></div>
+
+                    <div>{{ article.locale_date }}</div>
+
+                    <div>Category : <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></div>
+                </div>
+                {% endfor %}
+            <div>
+        </dl>
+		</div>
+
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+{% endblock %}

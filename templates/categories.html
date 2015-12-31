@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<head>
+
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+
+
+	<link href="../theme/css/pygment.css" rel="stylesheet" type="text/css"/>
+	<link href="../theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="../{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+	{% if FEED_RSS %}
+	<link href="../{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+	{% endif %}
+</head>
+{% block content %}
+<div id="content">
+    <div class="post">
+        {% if articles %}
+            {% for article in articles %}
+                {% if loop.index == 1 %}
+    				<ul>
+                        {% for category, articles in categories %}
+                            <li>{{ category }}</li>
+                        {% endfor %}
+                    </ul>
+    		    {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

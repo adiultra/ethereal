@@ -1,0 +1,118 @@
+<html>
+
+<head>
+
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic|Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>	
+	<link href="{{ SITEURL }}/theme/css/pygment.css" rel="stylesheet" type="text/css"/>
+	<link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+	{% if FEED_RSS %}
+	<link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+	{% endif %}
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	<div id="page">
+
+		<div id="page-bgtop">
+
+			<div id="page-bgbtm">
+				{% block content %}
+                {% endblock %}
+
+				<div id="sidebar">
+
+					<div id="logo">
+						<h1><a href="{{ SITEURL }}/index.html">{{ SITENAME }}</a></h1>
+						{% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
+					</div>
+
+					<div id="menu">
+
+						<ul>
+							<li {% if page_name == "index" %}class="current_page_item"{% endif %}><a href="{{ SITEURL }}/index.html">Home</a></li>
+							<li {% if page_name == "archives" %}class="current_page_item"{% endif %}><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+						</ul>
+					</div>
+
+					<ul>
+						<li>
+							<h2>Categories</h2>
+
+							<ul>
+							{% for cat, null in categories %}
+								 <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+							{% endfor %}
+
+							</ul>
+
+						</li>
+						{% if LINKS %}
+						<li>
+
+							<h2>Blog Roll</h2>
+							<ul>
+							{% for name, link in LINKS %}
+                                <li><a href="{{ link }}">{{ name }}</a></li>
+                            {% endfor %}
+							</ul>
+						</li>
+						{% endif %}
+
+						{% if SOCIAL %}
+                        <li>
+                                <h2>Social</h2>
+                                <ul>
+
+                                    <li><a href="{{ SITEURL }}/{{ FEED }}" rel="alternate">Flux Atom</a></li>
+
+                                    {% if FEED_RSS %}
+                                    <li><a href="{{ SITEURL }}/{{ FEED_RSS }}" rel="alternate">Flux Rss</a></li>
+                                    {% endif %}
+
+                                {% for name, link in SOCIAL %}
+                                    <li><a href="{{ link }}">{{ name }}</a></li>
+                                {% endfor %}
+                                </ul>
+                        </li>
+                        {% endif %}
+
+						<li>
+								<h2>Tags</h2>
+								<ul>
+								{% for tag, articles in tags %}
+										<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
+								{% endfor %}
+								</ul>
+						</li>
+
+					</ul>
+				</div>
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+
+
+<div id="footer">
+	<p>Copyright (c) 2015 AdiUltra. All rights reserved. </p>
+
+	<p>Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>.
+
+</p>
+</div>
+
+{% include 'analytics.html' %}
+
+
+</body>
+</html>
