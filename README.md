@@ -1,9 +1,9 @@
 # ethereal
 The Eternal Divine theme for Pelican
 
-![screenshot](http://i.imgur.com/3XWz7vC.png)
+![screenshot](http://i.imgur.com/N6syC7v.png)
 
-![Archives](http://i.imgur.com/N6syC7v.png)
+![Archives](http://i.imgur.com/qpK51eY.png)
 
 ![images](http://i.imgur.com/PbJ3QhI.png)
 
