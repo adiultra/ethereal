@@ -9,7 +9,7 @@
                 <span class="date">Date : {{ article.locale_date }} </span><span class="posted">By : <a href="#">{{ article.author }}</a></span><span>&nbsp; | Category : <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
             </p>
             <p class="meta">Tags : {% for tag in article.tags %}
-                <span><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> / </span>
+                <span><a class="tag-list" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>
                 {% endfor %}
             </p>
 

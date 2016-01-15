@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="content">
-<div class="post">  
-<ul>
+<div class="post">
+<h1>Tags</h1>
+<hr />
+<ul id="tag-page">
 {% for tag, articles in tags %}
-    <li>{{ tag }}</li>
+    <li><a href="{{ SITEURL }}/tag/{{ tag }}.html">{{ tag }}</a></li>
 {% endfor %}
 </ul>
 </div>

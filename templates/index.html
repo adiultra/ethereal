@@ -15,7 +15,7 @@
                         </p>
 
                         <p class="meta">Tags : {% for tag in article.tags %}
-                            <span><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> / </span>
+                            <span class="tag-span"><a class="tag-list" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> </span>
                             {% endfor %}
                         </p>
 
@@ -44,7 +44,7 @@
                     <div class="entry">
         				{{ article.summary }}
                         <br />
-        				<a class="readmore" href="/{{ article.url }}">Read More >></a>
+        				<a class="readmore" href="{{ SITEURL }}/{{ article.url }}">Read More >></a>
     				</div>
 			    </div>
             {% endif %}
