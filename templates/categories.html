@@ -8,9 +8,9 @@
 	<title>{% block title %}{{ SITENAME }}{%endblock%}</title>
 
 
-	<link href="../theme/css/pygment.css" rel="stylesheet" type="text/css"/>
-	<link href="../theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
-	<link href="../{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+	<link href="{{ SITEURL }}/theme/css/pygment.css" rel="stylesheet" type="text/css"/>
+	<link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
 	{% if FEED_RSS %}
 	<link href="../{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
 	{% endif %}

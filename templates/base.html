@@ -10,9 +10,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 	<!-- favicon -->
-	<link rel="icon" type="image/png" href="{{ SITEURL }}/images/favicon.png">
-
-	<!-- Katex -->
+	<link rel="icon" type="image/png" href="{{ SITEURL }}/favicon.png">
 	<link rel="stylesheet" href="{{ SITEURL }}/theme/katex/katex.min.css">
 	<script src="{{ SITEURL }}/theme/katex/katex.min.js"></script>
 	<script src="{{ SITEURL }}/theme/katex/contrib/auto-render.min.js"></script>
@@ -21,7 +19,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic|Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
 	<!-- pygment highlighter -->
-	<link href="{{ SITEURL }}/theme/css/pygment.css" rel="stylesheet" type="text/css"/>
+	<link href="{{ SITEURL }}/theme/css/pygment.css" rel="stylesheet" type="text/css" media="screen"/>
 
 	<!-- css -->
 	<link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
@@ -70,7 +68,7 @@
 							<h2><a href="{{ SITEURL }}/tags.html" id="tag-sdbar">Tags</a></h2>
 							<ul>
 							{% for tag, articles in tags %}
-									<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
+									<li><a href="{{ SITEURL }}/{{ tag.url }}" {% if page_name == "{{ tag.url }}" %}class="current_page_item"{% endif %}>{{ tag }}</a></li>
 							{% endfor %}
 							</ul>
 					</li>
