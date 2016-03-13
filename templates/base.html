@@ -32,6 +32,26 @@
 
 <body>
 
+    <div id="mobile-header">
+        <div id="m-logo">
+            <h1><a href="{{ SITEURL }}/index.html">{{ SITENAME }}</a></h1>
+            {% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
+        </div>
+        <div id="m-menu">
+            <ul>
+                <li>
+                    <a href="{{ SITEURL }}/index.html" id="tag-sdbar">Home</a>
+                </li>
+                <li>
+                    <a href="{{ SITEURL }}/archives.html" id="tag-sdbar">Archive</a>
+                </li>
+                <li>
+                    <a href="{{ SITEURL }}/tags.html" id="tag-sdbar">Tags</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
 	<div id="page">
 			{% block content %}
             {% endblock %}
